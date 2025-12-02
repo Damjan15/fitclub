@@ -292,8 +292,8 @@
     <!-- ====== CTA ====== -->
     <section class="py-20">
         <div class="layout-container">
-            <div
-                class="w-full relative bg-[url(/assets/cta-bg.jpg)] bg-no-repeat bg-cover bg-center h-[500px] rounded-3xl px-6 xl:h-[550px]">
+            <div class="w-full relative bg-no-repeat bg-cover bg-center h-[500px] rounded-3xl px-6 xl:h-[550px]"
+                style="background-image: url('{{ Vite::asset('resources/assets/cta-bg.jpg') }}">
                 <!-- Overlay -->
                 <div class="absolute inset-0 bg-black/70 rounded-3xl"></div>
 

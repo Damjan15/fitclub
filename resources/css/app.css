@@ -140,7 +140,7 @@ body {
 
 .input.error,
 .textarea.error {
-    @apply border-error text-error focus:border-error;
+    @apply border-error focus:border-error;
 }
 
 .textarea {
