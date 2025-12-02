@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --color-primary-100: #b4dc26;
+    --color-primary-200: #f3fbd2;
+    --color-primary-300: #d9eafd;
+    --color-black: #0b0d0f;
+    --color-gray-200: #737678;
+    --color-gray-300: #a2a3a5;
+    --color-gray-400: #b9babc;
+    --color-gray-500: #e8e8e9;
+    --color-gray-600: #f4f4f4;
+    --color-gray-700: #f8f8f8;
+    --color-success: #138943;
+    --color-error: #dc2626;
+
+    --font-sora: "Sora", sans-serif;
+    --font-inter: "Inter Tight", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    @apply font-inter;
+}
+
+/* Typography */
+.h1,
+.h2,
+.h3,
+.h4,
+.h4,
+.h6 {
+    @apply font-sora font-bold;
+}
+
+.h1 {
+    @apply text-[34px] leading-[51px] lg:text-[70px] lg:leading-[105px];
+}
+
+.h2 {
+    @apply text-[28px] leading-[42px] lg:text-[56px] lg:leading-[84px];
+}
+
+.h3 {
+    @apply text-[24px] leading-9 lg:text-[44px] lg:leading-[66px];
+}
+
+.h4 {
+    @apply text-[20px] leading-[30px] lg:text-[32px] lg:leading-12;
+}
+
+.h5 {
+    @apply font-semibold text-[18px] leading-[27px] lg:text-[24px] lg:leading-9;
+}
+
+.h6 {
+    @apply text-[16px] leading-6 lg:text-[20px] lg:leading-[30px];
+}
+
+.subtitle {
+    @apply font-sora text-[20px] leading-[30px] font-semibold lg:text-[22px] lg:leading-[33px];
+}
+
+.body-lg-1,
+.body-lg-2,
+.body-md-1,
+.body-md-2,
+.body-sm,
+.body-xs {
+    @apply font-inter;
+}
+
+.body-lg-1 {
+    @apply font-medium text-[18px] leading-[27px] lg:text-[18px] lg:leading-[27px];
+}
+
+.body-lg-2 {
+    @apply font-semibold text-[18px] leading-[27px] lg:text-[18px];
+}
+
+.body-md-1 {
+    @apply font-medium text-[16px] leading-6;
+}
+
+.body-md-2 {
+    @apply font-semibold text-[16px] leading-6;
+}
+
+.body-sm {
+    @apply font-normal text-[14px] leading-[21px];
+}
+
+.body-xs {
+    @apply font-medium text-[12px] leading-[18px];
+}
+
+/* Containers */
+.layout-container {
+    @apply max-w-[1300px] mx-auto px-4;
+}
+
+/* Sections */
+.section-subtitle {
+    @apply inline-block rounded-full border border-black bg-primary-200 font-medium font-inter text-[14px] leading-[21px] md:text-[16px] md:leading-6 px-4 py-1.5;
+}
+
+.section-title {
+    @apply font-semibold font-sora text-black text-[28px] xl:text-[36px] leading-[42px] xl:leading-[60px] max-w-6xl;
+}
+
+/* Buttons */
+.btn {
+    @apply font-semibold text-[16px] leading-6 rounded-full transition-colors duration-200 ease-in-out w-auto min-w-[140px] whitespace-nowrap cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed text-center py-3 px-6;
+}
+
+.btn-primary {
+    @apply bg-primary-100 text-black hover:bg-black hover:text-white;
+}
+
+.btn-secondary {
+    @apply bg-black text-white hover:bg-primary-100 hover:text-black;
+}
+
+.btn-outline {
+    @apply bg-transparent text-primary-100 border-2 border-primary-100 hover:bg-primary-100 hover:text-black;
+}
+
+/* Inputs & Textarea */
+.input {
+    @apply w-full text-[16px] leading-6 font-inter rounded-lg border-2 bg-white text-black py-4 px-6 transition-all duration-200 ease-in-out border-gray-400 focus:border-black placeholder:text-gray-300 focus:outline-none disabled:border-gray-400 disabled:bg-gray-500 disabled:text-gray-300 disabled:cursor-not-allowed;
+}
+
+.input.error,
+.textarea.error {
+    @apply border-error text-error focus:border-error;
+}
+
+.textarea {
+    @apply w-full font-medium text-[16px] leading-6 font-inter rounded-lg border-2 bg-white text-black py-4 px-6 transition-all duration-200 ease-in-out border-gray-400 placeholder:text-gray-300 focus:outline-none focus:border-black resize-y disabled:border-gray-400 disabled:bg-gray-500 disabled:text-gray-300 disabled:cursor-not-allowed;
+}
+
+.error-msg {
+    @apply font-normal text-[14px] leading-[21px] text-error mt-1;
+}
+
+/* Navigation */
+.mobile-item {
+    @apply text-black hover:text-primary-100 transition-colors;
+}
+
+/* FAQS */
+.faq-item {
+    @apply bg-white p-6 rounded-2xl border border-black;
+}
+
+.faq-header {
+    @apply w-full flex justify-between items-center text-left;
+}
+
+.faq-icon-wrapper {
+    @apply w-8 h-8 rounded-full flex items-center justify-center bg-primary-300 border border-black;
+}
+
+.faq-content {
+    @apply overflow-hidden max-h-0 transition-all duration-500 ease-in-out;
+}
+
+.faq-icon {
+    @apply transition-transform duration-300 transform rotate-180;
+}
+
+/* Footer */
+.footer-item {
+    @apply font-medium text-[16px] leading-6 lg:text-[16px] lg:leading-6 text-white transition-all hover:text-primary-100;
+}
