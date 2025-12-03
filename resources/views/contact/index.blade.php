@@ -17,8 +17,31 @@
 
             {{-- Success Message --}}
             @if (session('success'))
-                <div class="mb-6 p-4 bg-green-600 text-white rounded-xl text-center">
-                    {{ session('success') }}
+                <div id="success-modal"
+                    class="fixed inset-0 bg-black/80 flex items-center justify-center z-100 p-4 transition-opacity duration-300 opacity-100"
+                    aria-modal="true" role="dialog">
+                    <div class="bg-white p-8 md:p-12 rounded-2xl max-w-md w-full text-center shadow-2xl">
+                        <div class="mb-6">
+                            <!-- Checkmark Icon (SVG) -->
+                            <svg class="w-16 h-16 text-primary-100 mx-auto" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+
+                        <h2 class="h3 text-black mb-3">{{ session('success') }}</h2>
+
+                        <p class="body-md-1 text-gray-200 mb-6">
+                            Your message has been submitted successfully. Our team will review your information and contact
+                            you
+                            within 24 hours to schedule your introductory call!
+                        </p>
+
+                        <a href="{{ route('home') }}" class="btn btn-primary w-full">
+                            Got it!
+                        </a>
+                    </div>
                 </div>
             @endif
 
@@ -69,4 +92,5 @@
             </div>
         </form>
     </div>
+
 @endsection

@@ -25,6 +25,6 @@ class ContactController extends Controller
         // Send email
         Mail::to('admin@fitclub-coaching.com')->send(new ContactMessage($validated));
 
-        return redirect()->route('contact')->with('success', 'Your message has been sent succesfully!');
+        return redirect()->route('contact')->with('success', 'Submission Successful!');
     }
 }
