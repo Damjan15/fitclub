@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactMessage;
+use App\Models\ContactSubmission;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -21,6 +22,9 @@ class ContactController extends Controller
             'email' => 'required|email',
             'message' => 'nullable|string',
         ]);
+
+        // Save to database
+        ContactSubmission::create($validated);
 
         // Send email
         Mail::to('admin@fitclub-coaching.com')->send(new ContactMessage($validated));
